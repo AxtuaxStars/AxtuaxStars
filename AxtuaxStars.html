@@ -1,137 +1,159 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación de Maestros</title>
-<style>
-body { font-family: Arial, sans-serif; margin: 20px; }
-h2 { padding: 10px; color: white; margin-top: 30px; }
-h3 { color: #333; margin-top: 20px; }
-ul { margin-left: 20px; }
-button { margin-top: 5px; cursor: pointer; }
-.star-rating { display: inline-block; margin: 5px 0; }
-.star { font-size: 25px; color: lightgray; cursor: pointer; }
-.star.selected, .star:hover, .star:hover ~ .star { color: gold; }
-.section-title { font-weight: bold; margin-top: 10px; }
-.question { margin-left: 10px; margin-top: 5px; }
-.semestre1 { background-color: #4DA6FF; }
-.semestre2 { background-color: #4CAF50; }
-.semestre3 { background-color: #FFB84D; }
-.semestre4 { background-color: #FF4D4D; }
-.semestre5 { background-color: #FFD633; }
-.semestre6 { background-color: #B266FF; }
-.semestre7 { background-color: #FF6666; }
-.semestre8 { background-color: #4DA6FF; }
-</style>
+    <meta charset="UTF-8">
+    <title>Axtuax Stars</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { text-align: center; }
+        h2 { padding: 10px; color: white; }
+        .semestre1 { background-color: #1E90FF; }
+        .star { font-size: 25px; cursor: pointer; color: lightgray; margin-right: 2px; }
+        .star.selected { color: gold; }
+        .question { margin: 5px 0; }
+        .section-title { font-weight: bold; margin-top: 10px; }
+        button { margin: 5px 0 10px 0; padding: 5px 10px; cursor: pointer; }
+        ul { list-style-type: disc; margin-left: 20px; }
+        .maestra-block { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; }
+    </style>
 </head>
 <body>
+    <h1>Califica a tus maestros</h1>
+    <p>Esta es la primera versión de tu página. Puedes calificar a cada maestro usando las estrellas.</p>
 
-<h2 class="semestre1">🟦 PRIMER SEMESTRE</h2>
+    <h2 class="semestre1">🟦 PRIMER SEMESTRE</h2>
 
-<h3>Educación ambiental</h3>
-<ul>
-  <li>Alma Lilia Jácquez García</li>
-  <li>Mayela Quiñones López</li>
-  <li>María Dolores Raigosa Gómez</li>
-</ul>
-<button onclick="toggleQuestions('eduAmb')">Mostrar preguntas</button>
-<div id="eduAmb" style="display:none;">
-  <div class="section-title">Sección 1: Evaluación y retroalimentación</div>
-  <div class="question">1. Este maestro califica de manera justa y objetiva.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
-  <div class="question">2. Este maestro da retroalimentación clara sobre por qué se obtuvo cierta calificación.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
-  <div class="question">3. Las evaluaciones de este maestro reflejan realmente lo que se aprende en clase.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
-  <div class="question">4. Este maestro utiliza diferentes métodos de evaluación (exámenes, exposiciones, tareas, participación).</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
+    <!-- Educación Ambiental -->
+    <h3>Educación Ambiental</h3>
+    <ul>
+        <li>Alma Lilia Jácquez García</li>
+        <li>Mayela Quiñones López</li>
+        <li>María Dolores Raigosa Gómez</li>
+    </ul>
 
-  <div class="section-title">Sección 2: Puntualidad y cumplimiento</div>
-  <div class="question">5. Este maestro llega puntualmente a todas sus clases.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
-  <div class="question">6. Este maestro cumple con los horarios y duración de las clases.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
-  <div class="question">7. Este maestro respeta los tiempos de entrega y fechas de evaluación.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
+    <!-- Alma Lilia -->
+    <div class="maestra-block">
+        <button onclick="toggleQuestions('alma')">Mostrar preguntas de Alma Lilia</button>
+        <div id="alma" style="display:none;">
+            <h4>Califica a Alma Lilia Jácquez García</h4>
+            <div class="section-title">Sección 1: Evaluación y retroalimentación</div>
+            <div class="question">1. Este maestro califica de manera justa y objetiva.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">2. Este maestro da retroalimentación clara sobre por qué se obtuvo cierta calificación.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">3. Las evaluaciones reflejan lo que se aprende en clase.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">4. Este maestro utiliza diferentes métodos de evaluación.</div>
+            <div class="star-rating" data-maestra="alma"></div>
 
-  <div class="section-title">Sección 3: Metodología y claridad</div>
-  <div class="question">8. Este maestro explica los temas de manera clara y fácil de entender.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
-  <div class="question">9. Este maestro relaciona los temas de clase con ejemplos prácticos o la vida real.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
-  <div class="question">10. Este maestro permite la participación y las preguntas de los alumnos.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
-  <div class="question">11. Las clases de este maestro incluyen actividades que facilitan el aprendizaje práctico.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
+            <div class="section-title">Sección 2: Puntualidad y cumplimiento</div>
+            <div class="question">5. Llega puntualmente a todas sus clases.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">6. Cumple con los horarios y duración de las clases.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">7. Respeta los tiempos de entrega y fechas de evaluación.</div>
+            <div class="star-rating" data-maestra="alma"></div>
 
-  <div class="section-title">Sección 4: Relevancia de los temas</div>
-  <div class="question">12. Este maestro se enfoca en los contenidos de la materia.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
-  <div class="question">13. Este maestro toca otros temas relacionados que enriquecen el aprendizaje.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
-  <div class="question">14. Este maestro evita desviarse en temas irrelevantes para la materia o la carrera.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
+            <div class="section-title">Sección 3: Metodología y claridad</div>
+            <div class="question">8. Explica los temas de manera clara y fácil de entender.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">9. Relaciona los temas con ejemplos prácticos o vida real.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">10. Permite la participación y preguntas de los alumnos.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">11. Las clases incluyen actividades que facilitan el aprendizaje práctico.</div>
+            <div class="star-rating" data-maestra="alma"></div>
 
-  <div class="section-title">Sección 5: Dinamismo y experiencia</div>
-  <div class="question">15. Las clases de este maestro son interesantes y motivadoras.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
-  <div class="question">16. Este maestro mantiene la atención de los alumnos durante la clase.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
-  <div class="question">17. Las clases se sienten productivas y no tediosas.</div>
-  <div class="star-rating"> <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span> </div>
-</div>
+            <div class="section-title">Sección 4: Relevancia de los temas</div>
+            <div class="question">12. Se enfoca en los contenidos de la materia.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">13. Toca otros temas relacionados que enriquecen el aprendizaje.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">14. Evita desviarse en temas irrelevantes para la materia o carrera.</div>
+            <div class="star-rating" data-maestra="alma"></div>
 
-<!-- Aquí iría el siguiente bloque de materia con otro id -->
-<!-- Repite este bloque para cada materia de cada semestre, cambiando el id en toggleQuestions y div -->
+            <div class="section-title">Sección 5: Dinamismo y experiencia</div>
+            <div class="question">15. Las clases son interesantes y motivadoras.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">16. Mantiene la atención de los alumnos durante la clase.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">17. Las clases se sienten productivas y no tediosas.</div>
+            <div class="star-rating" data-maestra="alma"></div>
 
-<h2 class="semestre2">🟩 SEGUNDO SEMESTRE</h2>
-<!-- Bloques de materias y maestros igual que arriba -->
+            <div><strong>Calificación promedio:</strong> <span id="almaProm">0</span> ⭐</div>
+        </div>
+    </div>
 
-<h2 class="semestre3">🟧 TERCER SEMESTRE</h2>
-<!-- Bloques de materias y maestros -->
+    <!-- Mayela -->
+    <div class="maestra-block">
+        <button onclick="toggleQuestions('mayela')">Mostrar preguntas de Mayela</button>
+        <div id="mayela" style="display:none;">
+            <h4>Califica a Mayela Quiñones López</h4>
+            <!-- Preguntas iguales al bloque anterior con data-maestra="mayela" -->
+            <div class="section-title">Sección 1: Evaluación y retroalimentación</div>
+            <!-- Repite 17 preguntas con data-maestra="mayela" como en el bloque anterior -->
+            <div class="star-rating" data-maestra="mayela"></div>
+            <div><strong>Calificación promedio:</strong> <span id="mayelaProm">0</span> ⭐</div>
+        </div>
+    </div>
 
-<h2 class="semestre4">🟥 CUARTO SEMESTRE</h2>
-<!-- Bloques de materias y maestros -->
+    <!-- María Dolores -->
+    <div class="maestra-block">
+        <button onclick="toggleQuestions('maria')">Mostrar preguntas de María Dolores</button>
+        <div id="maria" style="display:none;">
+            <h4>Califica a María Dolores Raigosa Gómez</h4>
+            <!-- Preguntas iguales al bloque Alma con data-maestra="maria" -->
+            <div class="star-rating" data-maestra="maria"></div>
+            <div><strong>Calificación promedio:</strong> <span id="mariaProm">0</span> ⭐</div>
+        </div>
+    </div>
 
-<h2 class="semestre5">🟨 QUINTO SEMESTRE</h2>
-<!-- Bloques de materias y maestros -->
+    <script>
+        function toggleQuestions(id) {
+            const el = document.getElementById(id);
+            el.style.display = el.style.display === 'none' ? 'block' : 'none';
+        }
 
-<h2 class="semestre6">🟪 SEXTO SEMESTRE</h2>
-<!-- Bloques de materias y maestros -->
+        document.querySelectorAll('.star-rating').forEach(starDiv => {
+            const maestra = starDiv.dataset.maestra;
+            const stars = [];
+            for(let i=1;i<=5;i++){
+                const star = document.createElement('span');
+                star.classList.add('star');
+                star.innerHTML = '⭐';
+                star.dataset.value = i;
+                starDiv.appendChild(star);
+                stars.push(star);
+            }
 
-<h2 class="semestre7">🟫 SÉPTIMO SEMESTRE</h2>
-<!-- Bloques de materias y maestros -->
+            stars.forEach(star => {
+                star.addEventListener('click', () => {
+                    stars.forEach(s => s.classList.remove('selected'));
+                    star.classList.add('selected');
+                    let prev = star.previousElementSibling;
+                    while(prev){ prev.classList.add('selected'); prev=prev.previousElementSibling;}
+                    calcularPromedio(maestra);
+                });
+                star.addEventListener('mouseover', () => {
+                    stars.forEach(s => s.style.color='lightgray');
+                    star.style.color='gold';
+                    let prev = star.previousElementSibling;
+                    while(prev){ prev.style.color='gold'; prev=prev.previousElementSibling;}
+                });
+                star.addEventListener('mouseout', () => {
+                    stars.forEach(s => s.style.color = s.classList.contains('selected')?'gold':'lightgray');
+                });
+            });
+        });
 
-<h2 class="semestre8">🟦 OCTAVO SEMESTRE</h2>
-<!-- Bloques de materias y maestros -->
+        function calcularPromedio(maestra){
+            const estrellas = document.querySelectorAll(.star-rating[data-maestra='${maestra}'] .star.selected);
+            const total = document.querySelectorAll(.star-rating[data-maestra='${maestra}'] .star).length;
+            const promedio = (estrellas.length/total*5).toFixed(1);
+            document.getElementById(${maestra}Prom).innerText = promedio;
+        }
+    </script>
 
-<script>
-function toggleQuestions(id) {
-  const el = document.getElementById(id);
-  el.style.display = el.style.display === 'none' ? 'block' : 'none';
-}
-
-document.querySelectorAll('.star-rating').forEach(starDiv => {
-  const stars = starDiv.querySelectorAll('.star');
-  stars.forEach(star => {
-    star.addEventListener('click', () => {
-      stars.forEach(s => s.classList.remove('selected'));
-      star.classList.add('selected');
-      let prev = star.previousElementSibling;
-      while(prev) { prev.classList.add('selected'); prev = prev.previousElementSibling; }
-    });
-    star.addEventListener('mouseover', () => {
-      stars.forEach(s => s.style.color = 'lightgray');
-      star.style.color = 'gold';
-      let prev = star.previousElementSibling;
-      while(prev) { prev.style.color = 'gold'; prev = prev.previousElementSibling; }
-    });
-    star.addEventListener('mouseout', () => {
-      stars.forEach(s => s.style.color = s.classList.contains('selected') ? 'gold' : 'lightgray');
-    });
-  });
-});
-</script>
 </body>
 </html>
+
