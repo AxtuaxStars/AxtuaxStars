@@ -4,6 +4,165 @@
     <meta charset="UTF-8">
     <title>Axtuax Stars</title>
     <style>
+        <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Axtuax Stars - Educación Ambiental</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+        h1 { text-align: center; color: #333; }
+        h2 { padding: 10px; color: white; border-radius: 5px; }
+        .semestre1 { background-color: #1E90FF; }
+        .maestra-block { margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; background-color: white; border-radius: 5px; box-shadow: 2px 2px 6px rgba(0,0,0,0.1); }
+        button { margin: 5px 0 10px 0; padding: 5px 10px; cursor: pointer; background-color: #007BFF; color: white; border: none; border-radius: 3px; }
+        button:hover { background-color: #0056b3; }
+        .question { margin: 5px 0; }
+        .section-title { font-weight: bold; margin-top: 10px; }
+        .star { font-size: 25px; cursor: pointer; color: lightgray; margin-right: 2px; }
+        .star.selected { color: gold; }
+    </style>
+</head>
+<body>
+    <h1>Califica a tus maestros</h1>
+    <p>Puedes calificar a cada maestro usando las estrellas. El promedio se actualizará automáticamente.</p>
+
+    <h2 class="semestre1">🟦 PRIMER SEMESTRE</h2>
+    <h3>Educación Ambiental</h3>
+    <ul>
+        <li>Alma Lilia Jácquez García</li>
+        <li>Mayela Quiñones López</li>
+        <li>María Dolores Raigosa Gómez</li>
+    </ul>
+
+    <!-- Alma Lilia -->
+    <div class="maestra-block">
+        <button onclick="toggleQuestions('alma')">Mostrar preguntas de Alma Lilia</button>
+        <div id="alma" style="display:none;">
+            <h4>Califica a Alma Lilia Jácquez García</h4>
+            <!-- 17 preguntas -->
+            <div class="section-title">Sección 1: Evaluación y retroalimentación</div>
+            <div class="question">1. Este maestro califica de manera justa y objetiva.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">2. Este maestro da retroalimentación clara sobre por qué se obtuvo cierta calificación.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">3. Las evaluaciones reflejan lo que se aprende en clase.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">4. Este maestro utiliza diferentes métodos de evaluación.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+
+            <div class="section-title">Sección 2: Puntualidad y cumplimiento</div>
+            <div class="question">5. Llega puntualmente a todas sus clases.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">6. Cumple con los horarios y duración de las clases.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">7. Respeta los tiempos de entrega y fechas de evaluación.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+
+            <div class="section-title">Sección 3: Metodología y claridad</div>
+            <div class="question">8. Explica los temas de manera clara y fácil de entender.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">9. Relaciona los temas con ejemplos prácticos o vida real.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">10. Permite la participación y preguntas de los alumnos.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">11. Las clases incluyen actividades que facilitan el aprendizaje práctico.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+
+            <div class="section-title">Sección 4: Relevancia de los temas</div>
+            <div class="question">12. Se enfoca en los contenidos de la materia.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">13. Toca otros temas relacionados que enriquecen el aprendizaje.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">14. Evita desviarse en temas irrelevantes para la materia o carrera.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+
+            <div class="section-title">Sección 5: Dinamismo y experiencia</div>
+            <div class="question">15. Las clases son interesantes y motivadoras.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">16. Mantiene la atención de los alumnos durante la clase.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+            <div class="question">17. Las clases se sienten productivas y no tediosas.</div>
+            <div class="star-rating" data-maestra="alma"></div>
+
+            <div><strong>Calificación promedio:</strong> <span id="almaProm">0</span> ⭐</div>
+        </div>
+    </div>
+
+    <!-- Mayela -->
+    <div class="maestra-block">
+        <button onclick="toggleQuestions('mayela')">Mostrar preguntas de Mayela</button>
+        <div id="mayela" style="display:none;">
+            <h4>Califica a Mayela Quiñones López</h4>
+            <!-- Repetir 17 preguntas igual que Alma, solo cambiar data-maestra="mayela" -->
+            <!-- Aquí irían todas las preguntas -->
+            <div><strong>Calificación promedio:</strong> <span id="mayelaProm">0</span> ⭐</div>
+        </div>
+    </div>
+
+    <!-- María Dolores -->
+    <div class="maestra-block">
+        <button onclick="toggleQuestions('maria')">Mostrar preguntas de María Dolores</button>
+        <div id="maria" style="display:none;">
+            <h4>Califica a María Dolores Raigosa Gómez</h4>
+            <!-- Repetir 17 preguntas igual que Alma, solo cambiar data-maestra="maria" -->
+            <!-- Aquí irían todas las preguntas -->
+            <div><strong>Calificación promedio:</strong> <span id="mariaProm">0</span> ⭐</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleQuestions(id) {
+            const el = document.getElementById(id);
+            el.style.display = el.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function crearEstrellas() {
+            document.querySelectorAll('.star-rating').forEach(starDiv => {
+                const maestra = starDiv.dataset.maestra;
+                const stars = [];
+                starDiv.innerHTML = '';
+                for(let i=1;i<=5;i++){
+                    const star = document.createElement('span');
+                    star.classList.add('star');
+                    star.innerHTML = '⭐';
+                    star.dataset.value = i;
+                    starDiv.appendChild(star);
+                    stars.push(star);
+                }
+
+                stars.forEach(star => {
+                    star.addEventListener('click', () => {
+                        stars.forEach(s => s.classList.remove('selected'));
+                        star.classList.add('selected');
+                        let prev = star.previousElementSibling;
+                        while(prev){ prev.classList.add('selected'); prev=prev.previousElementSibling;}
+                        calcularPromedio(maestra);
+                    });
+                    star.addEventListener('mouseover', () => {
+                        stars.forEach(s => s.style.color='lightgray');
+                        star.style.color='gold';
+                        let prev = star.previousElementSibling;
+                        while(prev){ prev.style.color='gold'; prev=prev.previousElementSibling;}
+                    });
+                    star.addEventListener('mouseout', () => {
+                        stars.forEach(s => s.style.color = s.classList.contains('selected')?'gold':'lightgray');
+                    });
+                });
+            });
+        }
+
+        function calcularPromedio(maestra){
+            const estrellas = document.querySelectorAll(.star-rating[data-maestra='${maestra}'] .star.selected);
+            const total = document.querySelectorAll(.star-rating[data-maestra='${maestra}'] .star).length;
+            const promedio = (estrellas.length/total*5).toFixed(1);
+            document.getElementById(${maestra}Prom).innerText = promedio;
+        }
+
+        window.onload = crearEstrellas;
+    </script>
+</body>
+</html>
         body { font-family: Arial, sans-serif; margin: 20px; }
         h1 { text-align: center; }
         h2 { padding: 10px; color: white; }
